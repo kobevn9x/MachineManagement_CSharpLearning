@@ -7,12 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="AddMachinefunc.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="AddMachinefunc.cs" />
-  </ItemGroup>
-
 </Project>

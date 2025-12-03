@@ -3,7 +3,7 @@
 
     public class MainMenu
     {
-        static void PrintMenu()
+        public static void PrintMenu()
         {
             Console.WriteLine("===============================");
             Console.WriteLine("Machine Management Console App");
@@ -43,24 +43,17 @@
 
                         Console.Clear();
                         exitFunc = false;
-                        break;
+                        return;
 
                     case 1:
                         Console.Clear();
                         PrintMenu();
-
-                        //MenuTitle.T1();
-
-                        Machines Machine1 = new();
-                        Machine1.MachineName = "May moc so 1";
-                        Machine1.MachineID = "A001";
-                        Machines.AddMachine(Machine1.MachineName, Machine1.MachineID);
-
+                        AddMachinefunc.AddMchine();
                         //Return Menu
                         while (true)
                         {
                             Console.Write("Back to main menu, press number 0: ");
-                            string input = Console.ReadLine();
+                            string? input = Console.ReadLine();
 
                             // Validate numeric input
                             if (!int.TryParse(input, out int exitNum))
