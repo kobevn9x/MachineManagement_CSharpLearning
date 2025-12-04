@@ -1,41 +1,64 @@
 ﻿namespace MachineManagement
 {
-    public class AddMachinefunc
+    public static class AddMachineClass
     {
-        public static void AddMchine()
+        public static void AddMachineMethod()
         {
-            List<Machines> Thietbi = new List<Machines>();
             while (true)
             {
                 Console.Clear();
                 MainMenu.PrintMenu();
                 Console.WriteLine("---Menu: Them thiet bi moi---\n");
-                Machines newMachine = new();
-                Console.Write("Nhap ma Thiet Bi: ");
-                newMachine.MachineID = Console.ReadLine();
 
+                Machines objnewMachine = new(); //Tao object
+
+                while (true)
+                {
+                    Console.Write("Nhap ma Thiet Bi: ");
+                    string inputID = Console.ReadLine();
+                    bool kiemtraID = false;
+                    foreach(var machine in DataListClass.Thietbi)
+                    {
+                        if(machine.MachineID == inputID)
+                        {
+                            kiemtraID = true;
+                            break ;
+                        }
+                    }
+                    if (kiemtraID == true)
+                    {
+                        Console.WriteLine($"Ooop! Ma Thiet Bi ID: {inputID} da ton tai, Vui long thu lai");
+                    }
+                    else
+                    {
+                        objnewMachine.MachineID = inputID;
+                        break;
+                    }
+                }
                 Console.Write("Nhap ten Thiet Bi: ");
-                newMachine.MachineName = Console.ReadLine();
+                objnewMachine.MachineName = Console.ReadLine();
                 Console.Write("Nhap kieu Thiet Bi: ");
-                newMachine.MachineType = Console.ReadLine();
-                Console.Write("Nhap nm san xuat: ");
-                newMachine.YearOfMachineManufacturers = Convert.ToInt32(Console.ReadLine());
+                objnewMachine.MachineType = Console.ReadLine();
+                Console.Write("Nhap nam san xuat: ");
+                objnewMachine.YearOfMachineManufacturers =int.Parse(Console.ReadLine());
                 Console.Write("Nhap Hang san xuat: ");
-                newMachine.MachineManufacturers = Console.ReadLine();
+                objnewMachine.MachineManufacturers = Console.ReadLine();
                 Console.Write("Trang thai hien tai cua may: ");
-                newMachine.MachineStatus = Console.ReadLine();
+                objnewMachine.MachineStatus = Console.ReadLine();
 
-                Thietbi.Add(newMachine);
+                //Luu data vao List
+                DataListClass.Thietbi.Add(objnewMachine); 
                 Console.WriteLine("Them moi thiet bi thanh cong!");
-                Console.WriteLine("Bam 'Y' de them tiep, Bam 'F' de hoan tat");
+                Console.WriteLine($"Da nhap duoc {DataListClass.Thietbi.Count}"+" may vao DB");
                 
+                //Loop 1
+                Console.WriteLine("Bam 'Y' de them tiep, Bam 'F' de hoan tat");
                 string userInput = Console.ReadLine().ToUpper();
                 if (userInput != "Y")
                 {
                     break;
                 }
             }
-            Console.WriteLine($"Da nhap duoc {Thietbi.Count}"+" may vao DB");
         }
     }
 }
