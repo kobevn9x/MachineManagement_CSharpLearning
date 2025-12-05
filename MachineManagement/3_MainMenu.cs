@@ -7,7 +7,7 @@
         {
             Console.WriteLine("===============================");
             Console.WriteLine("Machine Management Console App");
-            Console.WriteLine("===============================\n");
+            Console.WriteLine(new string ('-',10));
         }
         static void MainMenuFunc()
         {
