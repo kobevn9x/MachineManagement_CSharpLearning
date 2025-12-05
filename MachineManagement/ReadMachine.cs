@@ -4,12 +4,13 @@
     {
         public static void ReadMachineMethod()
         {
+            Console.WriteLine("---Menu: Danh Sach Thiet Bi---");
+            Console.WriteLine($"|{"Machine ID",-5}|{"Ten Thiet Bi",-20}|{"Loai",-10}|{"Nam SX", 5}|{"Hang San Xuat", -10}|{"Trang Thai",-10}|");
+            Console.WriteLine(new string('-', 76));
             foreach (var thietbi in DataListClass.Thietbi)
             {
-                Console.WriteLine();
-                Console.WriteLine($"ID: {thietbi.MachineID} | Ten Thiet Bi: {thietbi.MachineName} | Loai Thiet Bi: {thietbi.MachineType} | Nam San Xuat: {thietbi.YearOfMachineManufacturers} | Hang san xuat: {thietbi.MachineManufacturers} | Trang Thai: {thietbi.MachineStatus}");
+                Console.WriteLine($"|{thietbi.MachineID,-10}|{thietbi.MachineName,-20}|{thietbi.MachineType,-10}|{thietbi.YearOfMachineManufacturers,-6}|{thietbi.MachineManufacturers,-13}|{thietbi.MachineStatus,-10}|");
             }
         }
-
     }
 }

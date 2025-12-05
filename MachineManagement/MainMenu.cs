@@ -41,35 +41,35 @@
 
                         Console.Clear();
                         return;
-
-                    case 1:
+                        
+                    case 1:                                         //Adding Machine
                         Console.Clear();
                         PrintMenu();
                         AddMachineClass.AddMachineMethod();
                         ExitfunctionClass.ExitMethod();
                         continue;
 
-                    case 2:
+                    case 2:                                         //Reading List
                         Console.Clear();
                         PrintMenu();
                         ReadMachineClass.ReadMachineMethod();
                         ExitfunctionClass.ExitMethod();
                         continue;
 
-                    case 3:
+                    case 3:                                          //Searching Data
+                        Console.Clear();
+                        PrintMenu();
+                        SearchMachineClass.SearchMachineFunc();
+                        ExitfunctionClass.ExitMethod();
+                        continue;
+
+                    case 4:                                          //Update Data                        
                         Console.Clear();
                         PrintMenu();
 
                         ExitfunctionClass.ExitMethod();
                         continue;
-
-                    case 4:
-                        Console.Clear();
-                        PrintMenu();
-
-                        ExitfunctionClass.ExitMethod();
-                        continue;
-                    case 5:
+                    case 5:                                           //Delete Machine
                         Console.Clear();
                         PrintMenu();
 

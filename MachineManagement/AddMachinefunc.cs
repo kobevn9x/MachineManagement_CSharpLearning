@@ -12,10 +12,11 @@
 
                 Machines objnewMachine = new(); //Tao object
 
+                //Nhap ma thiet bi
                 while (true)
                 {
                     Console.Write("Nhap ma Thiet Bi: ");
-                    string inputID = Console.ReadLine();
+                    string? inputID = Console.ReadLine();
                     bool kiemtraID = false;
                     foreach(var machine in DataListClass.Thietbi)
                     {
@@ -31,7 +32,7 @@
                     }
                     else
                     {
-                        objnewMachine.MachineID = inputID;
+                        objnewMachine.MachineID = inputID.ToUpper();
                         break;
                     }
                 }
@@ -39,10 +40,33 @@
                 objnewMachine.MachineName = Console.ReadLine();
                 Console.Write("Nhap kieu Thiet Bi: ");
                 objnewMachine.MachineType = Console.ReadLine();
-                Console.Write("Nhap nam san xuat: ");
-                objnewMachine.YearOfMachineManufacturers =int.Parse(Console.ReadLine());
+                while (true) 
+                { 
+                    int Namsx = 0;
+                    Console.Write("Nhap nam san xuat: ");
+                    string? StringNamsx = Console.ReadLine();
+
+                    if (string.IsNullOrEmpty(StringNamsx))
+                    {
+                        Console.WriteLine("Nam san xuat ko the de trong");
+                        continue;
+                    }
+
+                    bool isNumber = int.TryParse(StringNamsx, out Namsx);
+                    if (isNumber == false)
+                    {
+                        Console.WriteLine("Nam san xuat pha la so, Vi du: 2020");
+                        continue;
+                    }
+                    else
+                    {
+                         objnewMachine.YearOfMachineManufacturers = Namsx;
+                    }
+                        break;
+                }
                 Console.Write("Nhap Hang san xuat: ");
                 objnewMachine.MachineManufacturers = Console.ReadLine();
+
                 Console.Write("Trang thai hien tai cua may: ");
                 objnewMachine.MachineStatus = Console.ReadLine();
 
