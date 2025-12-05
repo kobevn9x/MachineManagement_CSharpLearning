@@ -38,8 +38,11 @@
                 }
                 Console.Write("Nhap ten Thiet Bi: ");
                 objnewMachine.MachineName = Console.ReadLine();
+
                 Console.Write("Nhap kieu Thiet Bi: ");
-                objnewMachine.MachineType = Console.ReadLine();
+                string? machinestyleInput = Console.ReadLine();
+                objnewMachine.MachineType = machinestyleInput.ToUpper();
+
                 while (true) 
                 { 
                     int Namsx = 0;

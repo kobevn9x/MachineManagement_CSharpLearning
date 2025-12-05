@@ -7,6 +7,7 @@
 
         // Before
         // public static Machines TiemkiemThietBi(string idTimkiem)
+        /*Thu dung thang List goc*/
         public static List<Machines> TiemkiemThietBi(string idTimkiem)
         {
             List<Machines> listTimkiem = new List<Machines>();
@@ -14,7 +15,7 @@
 
             foreach (Machines machine in Thietbi)
             {
-                if (machine.MachineID.Contains(idTimkiemupper))
+                if (machine.MachineID.Contains(idTimkiemupper) || machine.MachineType.Contains(idTimkiemupper))
                 {
                     listTimkiem.Add(machine);
                 }
