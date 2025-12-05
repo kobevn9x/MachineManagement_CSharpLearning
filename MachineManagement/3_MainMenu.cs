@@ -5,9 +5,10 @@
     {
         public static void PrintMenu()
         {
-            Console.WriteLine("===============================");
+            Console.Title = "Quan Ly Thiet Bi";
+            Console.WriteLine(new string ('=', 30));
             Console.WriteLine("Machine Management Console App");
-            Console.WriteLine(new string ('-',10));
+            Console.WriteLine(new string ('=',30));
         }
         static void MainMenuFunc()
         {
