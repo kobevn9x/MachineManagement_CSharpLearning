@@ -28,7 +28,7 @@
             }
             else 
             {
-                Console.WriteLine("\nDanh sach thiet bi duc tim thay la:");
+                Console.WriteLine("\nDanh sach thiet bi duoc tim thay la:");
                 Console.WriteLine($"|{"Machine ID",-5}|{"Ten Thiet Bi",-20}|{"Loai",-10}|{"Nam SX",5}|{"Hang San Xuat",-10}|{"Trang Thai",-10}|");
                 Console.WriteLine(new string('-', 76));
                 foreach (var machines in danhsachTim)
