@@ -3,7 +3,7 @@
     public static class DataListClass
     {
         //Noi luu tru data vao List, Phai luu vao Class ko phai Method
-        public static List<Machines> Thietbi = new List<Machines>();
+        public static List<Machines> Thietbi = new List<Machines>();    
 
         // Before
         // public static Machines TiemkiemThietBi(string idTimkiem)

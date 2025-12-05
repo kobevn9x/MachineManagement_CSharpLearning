@@ -72,7 +72,7 @@
                     case 5:                                           //Delete Machine
                         Console.Clear();
                         PrintMenu();
-
+                        DeleteMachineClass.DeleteMachineFunc();
                         ExitfunctionClass.ExitMethod();
                         continue;
                 }

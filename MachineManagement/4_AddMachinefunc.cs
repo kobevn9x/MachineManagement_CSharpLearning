@@ -76,7 +76,7 @@
                 //Luu data vao List
                 DataListClass.Thietbi.Add(objnewMachine); 
                 Console.WriteLine("Them moi thiet bi thanh cong!");
-                Console.WriteLine($"Da nhap duoc {DataListClass.Thietbi.Count}"+" may vao DB");
+                Console.WriteLine($"Da nhap duoc {DataListClass.Thietbi.Count}"+" may vao DB \n");
                 
                 //Loop 1
                 Console.WriteLine("Bam 'Y' de them tiep, Bam 'F' de hoan tat");
