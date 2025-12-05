@@ -53,7 +53,7 @@
                     machine.YearOfMachineManufacturers = int.Parse(updateInput);
                 }
 
-                Console.WriteLine($"Hang SAn Xuat thiet bi la: {machine.MachineManufacturers}");
+                Console.WriteLine($"Hang san Xuat thiet bi la: {machine.MachineManufacturers}");
                 Console.Write("Nhap ten moi (Hoac Enter de giu nguyen): ");
                 updateInput = Console.ReadLine(); 
                 if (updateInput != "")
@@ -61,13 +61,14 @@
                     machine.MachineManufacturers = updateInput;
                 }
 
-                Console.WriteLine($"Hang SAn Xuat thiet bi la: {machine.MachineStatus}");
+                Console.WriteLine($"Trang thai cu thiet bi la: {machine.MachineStatus}");
                 Console.Write("Nhap ten moi (Hoac Enter de giu nguyen): ");
                 updateInput = Console.ReadLine();
                 if (updateInput != "")
                 {
                     machine.MachineStatus = updateInput;
                 }
+                Console.WriteLine($"Da cap nhat thong tin thanh cong cho thiet bi ID {tiemkiemID}");
                 break;
             }
         }
