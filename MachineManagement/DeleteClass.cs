@@ -25,8 +25,8 @@
             List<Machines> Xoathietbi = DataListClass.TiemkiemThietBi(timkiemID);
             
             Console.Write($"Xac nhan xoa thiet bi ID:{timkiemID} Y/N: ");
-            string xacnhanxoa = Console.ReadLine();
-            if (xacnhanxoa == "Y" || xacnhanxoa == "y")
+            string? x = Console.ReadLine();
+            if (x == "Y" || x == "y")
             {
                 foreach(Machines machines in DataListClass.Thietbi )
                 {
