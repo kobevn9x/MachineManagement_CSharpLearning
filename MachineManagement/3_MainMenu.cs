@@ -66,7 +66,7 @@
                     case 4:                                          //Update Data                        
                         Console.Clear();
                         PrintMenu();
-
+                        UpdateMachineClass.UpdateMachineFunc();
                         ExitfunctionClass.ExitMethod();
                         continue;
                     case 5:                                           //Delete Machine
