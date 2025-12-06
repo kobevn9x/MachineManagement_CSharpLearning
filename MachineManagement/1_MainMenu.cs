@@ -46,34 +46,34 @@
                     case 1:                                         //Adding Machine
                         Console.Clear();
                         PrintMenu();
-                        Machines.AddMachineMethod();
+                        MachinesManger.AddMachineMethod();
                         ExitfunctionClass.ExitMethod();
                         continue;
 
                     case 2:                                         //Reading List
                         Console.Clear();
                         PrintMenu();
-                        Machines.ReadMachineMethod();
+                        MachinesManger.ReadMachineMethod();
                         ExitfunctionClass.ExitMethod();
                         continue;
 
                     case 3:                                          //Searching Data
                         Console.Clear();
                         PrintMenu();
-                        Machines.SearchMachineFunc();
+                        MachinesManger.SearchMachineFunc();
                         ExitfunctionClass.ExitMethod();
                         continue;
 
                     case 4:                                          //Update Data                        
                         Console.Clear();
                         PrintMenu();
-                        Machines.UpdateMachineFunc();
+                        MachinesManger.UpdateMachineFunc();
                         ExitfunctionClass.ExitMethod();
                         continue;
                     case 5:                                           //Delete Machine
                         Console.Clear();
                         PrintMenu();
-                        Machines.DeleteMachineFunc();
+                        MachinesManger.DeleteMachineFunc();
                         ExitfunctionClass.ExitMethod();
                         continue;
                 }
