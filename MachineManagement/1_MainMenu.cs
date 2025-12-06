@@ -46,38 +46,64 @@
                     case 1:                                         //Adding Machine
                         Console.Clear();
                         PrintMenu();
-                        AddMachineClass.AddMachineMethod();
-                        ExitfunctionClass.ExitMethod();
+                        Machines.AddMachineMethod();
+                        ExitMethod();
                         continue;
 
                     case 2:                                         //Reading List
                         Console.Clear();
                         PrintMenu();
-                        ReadMachineClass.ReadMachineMethod();
-                        ExitfunctionClass.ExitMethod();
+                        Machines.ReadMachineMethod();
+                        ExitMethod();
                         continue;
 
                     case 3:                                          //Searching Data
                         Console.Clear();
                         PrintMenu();
-                        SearchMachineClass.SearchMachineFunc();
-                        ExitfunctionClass.ExitMethod();
+                        Machines.SearchMachineFunc();
+                        ExitMethod();
                         continue;
 
                     case 4:                                          //Update Data                        
                         Console.Clear();
                         PrintMenu();
-                        UpdateMachineClass.UpdateMachineFunc();
-                        ExitfunctionClass.ExitMethod();
+                        Machines.UpdateMachineFunc();
+                        ExitMethod();
                         continue;
                     case 5:                                           //Delete Machine
                         Console.Clear();
                         PrintMenu();
-                        DeleteMachineClass.DeleteMachineFunc();
-                        ExitfunctionClass.ExitMethod();
+                        Machines.DeleteMachineFunc();
+                        ExitMethod();
                         continue;
                 }
                 break;
+            }
+        }
+        public static void ExitMethod()
+        {
+            bool exitFunc = false;
+            while (true)
+            {
+                Console.Write("\nBack to main menu, press number 0: ");
+                string? input = Console.ReadLine();
+
+                // Validate numeric input
+                if (!int.TryParse(input, out int exitNum))
+                {
+                    Console.WriteLine("\nInvalid input. Please enter the number 0.");
+                    continue;
+                }
+                if (exitNum == 0)
+                {
+                    exitFunc = true;
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong key. You must enter 0 to go back to the main menu.");
+                }
             }
         }
     }
