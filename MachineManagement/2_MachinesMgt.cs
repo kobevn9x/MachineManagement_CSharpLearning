@@ -24,13 +24,13 @@
 
         public static void AddMachineMethod()
         {
+            var db = new SqliteDataAccess();
             while (true)
             {
                 Console.Clear();
                 MainMenu.PrintMenu();
                 Console.WriteLine("---Menu: Them thiet bi moi---\n");
-
-                Machines objnewMachine = new(); //Tao object
+                Machines objnewMachine = new Machines(); //Tao object
 
                 //Nhap ma thiet bi
                 while (true)
@@ -40,7 +40,7 @@
                     bool kiemtraID = false;
                     foreach (var machine in MachinesManger.Thietbi)
                     {
-                        if (machine.MachineID == inputID)
+                        if (machine.MachineID.ToUpper() == inputID.ToUpper())
                         {
                             kiemtraID = true;
                             break;
@@ -60,8 +60,7 @@
                 objnewMachine.MachineName = Console.ReadLine();
 
                 Console.Write("Nhap kieu Thiet Bi: ");
-                string? machinestyleInput = Console.ReadLine();
-                objnewMachine.MachineType = machinestyleInput.ToUpper();
+                objnewMachine.MachineType = Console.ReadLine();
 
                 while (true)
                 {
@@ -95,6 +94,7 @@
 
                 //Luu data vao List
                 MachinesManger.Thietbi.Add(objnewMachine);
+                db.InsertMachine(objnewMachine);
                 Console.WriteLine("Them moi thiet bi thanh cong!");
                 Console.WriteLine($"Da nhap duoc {MachinesManger.Thietbi.Count}" + " may vao DB \n");
 
