@@ -1,6 +1,5 @@
 ﻿namespace MachineManagement
 {
-    public class Machines
     {
         public string? MachineID { get; set; }
         public string? MachineName { get; set; }

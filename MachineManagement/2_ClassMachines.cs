@@ -1,6 +1,6 @@
 ﻿namespace MachineManagement
 {
-    public static class MachineManager
+    public  class MachinesManger
     {
         //Noi luu tru data vao List, Phai luu vao Class ko phai Method
         public static List<Machines> AllMachines = new();
@@ -37,7 +37,7 @@
                     Console.Write("Nhap ma Thiet Bi: ");
                     string? inputID = Console.ReadLine();
                     bool kiemtraID = false;
-                    foreach (var machine in MachineManager.AllMachines)
+                    foreach (var machine in MachinesManger.Thietbi)
                     {
                         if (machine.MachineID == inputID)
                         {
@@ -93,9 +93,9 @@
                 objnewMachine.MachineStatus = Console.ReadLine();
 
                 //Luu data vao List
-                MachineManager.AllMachines.Add(objnewMachine);
+                MachinesManger.Thietbi.Add(objnewMachine);
                 Console.WriteLine("Them moi thiet bi thanh cong!");
-                Console.WriteLine($"Da nhap duoc {MachineManager.AllMachines.Count}" + " may vao DB \n");
+                Console.WriteLine($"Da nhap duoc {MachinesManger.Thietbi.Count}" + " may vao DB \n");
 
                 //Loop 1
                 Console.WriteLine("Bam 'Y' de them tiep, Bam 'F' de hoan tat");
@@ -111,7 +111,7 @@
             Console.WriteLine("---Menu: Danh Sach Thiet Bi---");
             Console.WriteLine($"|{"Machine ID",-5}|{"Ten Thiet Bi",-20}|{"Loai",-10}|{"Nam SX",5}|{"Hang San Xuat",-10}|{"Trang Thai",-10}|");
             Console.WriteLine(new string('-', 76));
-            foreach (var Machines in MachineManager.AllMachines)
+            foreach (var thietbi in MachinesManger.Thietbi)
             {
                 Console.WriteLine($"|{Machines.MachineID,-10}|{Machines.MachineName,-20}|{Machines.MachineType,-10}|{Machines.YearOfMachineManufacturers,-6}|{Machines.MachineManufacturers,-13}|{Machines.MachineStatus,-10}|");
             }
@@ -135,7 +135,7 @@
                 }
                 break;
             }
-            List<Machines> danhsachTim = MachineManager.TiemkiemMachines(tiemkiemID);
+            List<Machines> danhsachTim = MachinesManger.TiemkiemThietBi(tiemkiemID);
             if (danhsachTim.Count == 0)
             {
                 Console.WriteLine($"Khong co du lieu cho ID {tiemkiemID} ");
@@ -172,7 +172,7 @@
                 break;
             }
 
-            List<Machines> danhsachUpdate = MachineManager.TiemkiemMachines(tiemkiemID);
+            List<Machines> danhsachUpdate = MachinesManger.TiemkiemThietBi(tiemkiemID);
 
             string updateInput;
             foreach (var machine in danhsachUpdate)
@@ -241,15 +241,15 @@
                 break;
             }
 
-            List<Machines> XoaMachines = MachineManager.TiemkiemMachines(timkiemID);
+            List<Machines> Xoathietbi = MachinesManger.TiemkiemThietBi(timkiemID);
 
             Console.Write($"Xac nhan xoa thiet bi ID:{timkiemID} Y/N: ");
             string? x = Console.ReadLine();
             if (x == "Y" || x == "y")
             {
-                foreach (Machines machines in MachineManager.AllMachines)
+                foreach (Machines machines in MachinesManger.Thietbi)
                 {
-                    MachineManager.AllMachines.Remove(machines);
+                    MachinesManger.Thietbi.Remove(machines);
                     Console.WriteLine($"Da xoa thiet bi ID {timkiemID}");
                     break;
                 }
