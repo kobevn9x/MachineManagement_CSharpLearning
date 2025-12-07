@@ -3,7 +3,8 @@
     public  class MachinesManger
     {
         //Noi luu tru data vao List, Phai luu vao Class ko phai Method
-        public static List<Machines> AllMachines = new();
+        public static List<Machines> Thietbi = new();
+        
 
         // Vùng nhớ tạm thời đẻ lưu data theo điều kiện tìm kiếm/ Đúng ko anh
         public static List<Machines> TiemkiemMachines(string idTimkiem)
@@ -11,7 +12,7 @@
             List<Machines> listTimkiem = new List<Machines>();
             string idTimkiemupper = idTimkiem.ToUpper();
 
-            foreach (Machines machine in AllMachines)
+            foreach (Machines machine in Thietbi)
             {
                 if (machine.MachineID.Contains(idTimkiemupper) || machine.MachineType.Contains(idTimkiemupper))
                 {
@@ -113,7 +114,7 @@
             Console.WriteLine(new string('-', 76));
             foreach (var thietbi in MachinesManger.Thietbi)
             {
-                Console.WriteLine($"|{Machines.MachineID,-10}|{Machines.MachineName,-20}|{Machines.MachineType,-10}|{Machines.YearOfMachineManufacturers,-6}|{Machines.MachineManufacturers,-13}|{Machines.MachineStatus,-10}|");
+                Console.WriteLine($"|{thietbi.MachineID,-10}|{thietbi.MachineName,-20}|{thietbi.MachineType,-10}|{thietbi.YearOfMachineManufacturers,-6}|{thietbi.MachineManufacturers,-13}|{thietbi.MachineStatus,-10}|");
             }
         }
         public static void SearchMachineFunc()
@@ -135,7 +136,7 @@
                 }
                 break;
             }
-            List<Machines> danhsachTim = MachinesManger.TiemkiemThietBi(tiemkiemID);
+            List<Machines> danhsachTim = MachinesManger.TiemkiemMachines(tiemkiemID);
             if (danhsachTim.Count == 0)
             {
                 Console.WriteLine($"Khong co du lieu cho ID {tiemkiemID} ");
@@ -172,7 +173,7 @@
                 break;
             }
 
-            List<Machines> danhsachUpdate = MachinesManger.TiemkiemThietBi(tiemkiemID);
+            List<Machines> danhsachUpdate = MachinesManger.TiemkiemMachines(tiemkiemID);
 
             string updateInput;
             foreach (var machine in danhsachUpdate)
@@ -241,7 +242,7 @@
                 break;
             }
 
-            List<Machines> Xoathietbi = MachinesManger.TiemkiemThietBi(timkiemID);
+            List<Machines> Xoathietbi = MachinesManger.TiemkiemMachines(timkiemID);
 
             Console.Write($"Xac nhan xoa thiet bi ID:{timkiemID} Y/N: ");
             string? x = Console.ReadLine();
