@@ -1,9 +1,8 @@
 ﻿using Dapper;
 using System.Data;
-using System.Data.SQLite;
 using System.Reflection.PortableExecutable;
 
-namespace MachineManagement
+namespace SQLiteConnection
 {
     public class DatabaseConnect
     {
@@ -29,7 +28,7 @@ namespace MachineManagement
             using (IDbConnection cnn = new SQLiteConnection(_connString))
             {
                 // Dapper tự lấy giá trị từ m.ID, m.Name... điền vào @ID, @Name...
-                string sql = "INSERT INTO Machine (ID, Name, Type, Year) VALUES (@ID, @Name, @Type, @Year)";
+                string sql = "INSERT INTO Machine (MachineID, MachineName, MachineType, MachineManufacturers,YearOfMachineManufacturers,MachineStatus) VALUES (@MachineID, @MachineName, @MachineType, @MachineManufacturers,@YearOfMachineManufacturers,@MachineStatus)";
                 cnn.Execute(sql, m);
             }
         }

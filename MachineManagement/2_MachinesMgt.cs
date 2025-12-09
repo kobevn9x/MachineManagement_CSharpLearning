@@ -24,7 +24,7 @@
 
         public static void AddMachineMethod()
         {
-            var db = new SqliteDataAccess();
+            //var db = new SqliteDataAccess();
             while (true)
             {
                 Console.Clear();
@@ -87,14 +87,14 @@
                     break;
                 }
                 Console.Write("Nhap Hang san xuat: ");
-                objnewMachine.MachineManufacturers = Console.ReadLine();
+                objnewMachine.MachineBrand = Console.ReadLine();
 
                 Console.Write("Trang thai hien tai cua may: ");
                 objnewMachine.MachineStatus = Console.ReadLine();
 
                 //Luu data vao List
                 MachinesManger.Thietbi.Add(objnewMachine);
-                db.InsertMachine(objnewMachine);
+                //db.InsertMachine(objnewMachine);
                 Console.WriteLine("Them moi thiet bi thanh cong!");
                 Console.WriteLine($"Da nhap duoc {MachinesManger.Thietbi.Count}" + " may vao DB \n");
 
@@ -114,7 +114,7 @@
             Console.WriteLine(new string('-', 76));
             foreach (var thietbi in MachinesManger.Thietbi)
             {
-                Console.WriteLine($"|{thietbi.MachineID,-10}|{thietbi.MachineName,-20}|{thietbi.MachineType,-10}|{thietbi.YearOfMachineManufacturers,-6}|{thietbi.MachineManufacturers,-13}|{thietbi.MachineStatus,-10}|");
+                Console.WriteLine($"|{thietbi.MachineID,-10}|{thietbi.MachineName,-20}|{thietbi.MachineType,-10}|{thietbi.YearOfMachineManufacturers,-6}|{thietbi.MachineBrand,-13}|{thietbi.MachineStatus,-10}|");
             }
         }
         public static void SearchMachineFunc()
@@ -148,7 +148,7 @@
                 Console.WriteLine(new string('-', 76));
                 foreach (var machines in danhsachTim)
                 {
-                    Console.WriteLine($"|{machines.MachineID,-10}|{machines.MachineName,-20}|{machines.MachineType,-10}|{machines.YearOfMachineManufacturers,-6}|{machines.MachineManufacturers,-13}|{machines.MachineStatus,-10}|");
+                    Console.WriteLine($"|{machines.MachineID,-10}|{machines.MachineName,-20}|{machines.MachineType,-10}|{machines.YearOfMachineManufacturers,-6}|{machines.MachineBrand,-13}|{machines.MachineStatus,-10}|");
                 }
             }
         }
@@ -203,12 +203,12 @@
                     machine.YearOfMachineManufacturers = int.Parse(updateInput);
                 }
 
-                Console.WriteLine($"Hang san Xuat thiet bi la: {machine.MachineManufacturers}");
+                Console.WriteLine($"Hang san Xuat thiet bi la: {machine.MachineBrand}");
                 Console.Write("Nhap ten moi (Hoac Enter de giu nguyen): ");
                 updateInput = Console.ReadLine();
                 if (updateInput != "")
                 {
-                    machine.MachineManufacturers = updateInput;
+                    machine.MachineBrand = updateInput;
                 }
 
                 Console.WriteLine($"Trang thai cua thiet bi la: {machine.MachineStatus}");
